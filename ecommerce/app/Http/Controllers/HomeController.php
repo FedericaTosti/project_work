@@ -1,16 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Product;
 use Illuminate\Http\Request;
 
-// 
-use App\Models\Product;
+
 
 class HomeController extends Controller
 {
-    //
 
+    // Metodo per visualizzare la pagina di benvenuto
+    public function welcome()
+    {
+        return view('welcome');
+    }
     public function index()
     {
         $products = Product::all();
@@ -19,10 +22,7 @@ class HomeController extends Controller
 
     public function show($id)
     {
-        // $product = Product::find($id);
-        // return view('product', compact('product'));
-
         $product = Product::findOrFail($id);
-        return view('products.show', compact('product'));
+        return view('product.show', compact('product'));
     }
 }

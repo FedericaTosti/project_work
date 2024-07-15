@@ -1,17 +1,13 @@
+@extends('layouts.app')
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-</head>
-<body>
-    <div class="container">
-        <h1>Welcome to our eCommerce site!</h1>
-        <p>Explore our products and find what you need.</p>
-        <a href="{{ route('login') }}" class="btn btn-primary">Login</a>
+@section('title', 'Benvenuti')
+
+@section('content')
+    <div class="jumbotron">
+        <h1 class="display-4">Benvenuti nel nostro E-commerce!</h1>
+        <p class="lead">Qui puoi trovare una vasta selezione di prodotti.</p>
+        <hr class="my-4">
+        <p>Scopri i nostri prodotti cliccando il pulsante qui sotto.</p>
+        <a class="btn btn-primary btn-lg" href="{{ route('home') }}" role="button">Visualizza Prodotti</a>
     </div>
-</body>
-</html>
+@endsection
